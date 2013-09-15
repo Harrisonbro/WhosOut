@@ -7,9 +7,9 @@ $f3->set('AUTOLOAD', 'app/controllers/');
 
 $f3->route('GET /', 
 	function($f3) {
-		$f3->set('myvar', 'hello world'); 
-		$Template = new Template; 
-		echo $Template->render('mytempl.htm'); 
+		$f3->set('entries', Calendar::getEntries()); 
+		$view = new View; 
+		echo $view->render('index.php'); 
 	}
 );
 

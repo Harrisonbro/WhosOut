@@ -5,6 +5,8 @@
 	<title>Document</title>
 </head>
 <body>
-	getting entries...
+	
+	<pre><?php print_r($entries) ?></pre>
+
 </body>
 </html>
