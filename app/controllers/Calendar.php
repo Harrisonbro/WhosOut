@@ -7,7 +7,7 @@ class Calendar {
 	}
 
 	public static function getEntries() {
-		$result = DatabaseConnection::getInstance()->exec('SELECT * FROM people'); 
+		$result = DatabaseConnection::getInstance()->exec('SELECT * FROM entries'); 
 		return $result; 
 	}
 
