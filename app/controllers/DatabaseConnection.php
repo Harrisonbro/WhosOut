@@ -8,10 +8,11 @@ class DatabaseConnection {
 
 	public static function getInstance() {
 		if(!isset(self::$db)) {
+			global $f3; 
 			self::$db = new DB\SQL(
-				'mysql:host=localhost; dbname=whosout', 
-				'root', 
-				'root'
+				'mysql:host='.$f3->get('DB_HOST').'; dbname='.$f3->get('DB_NAME'), 
+				$f3->get('DB_USER'), 
+				$f3->get('DB_PASS')
 			);
 		}
 		return self::$db; 
