@@ -1,9 +1,14 @@
 <?php
 
 class Calendar {
-	
+
+	public function __construct(DatabaseInstance $db) {
+		$this->db = $db; 
+	}
+
 	public static function getEntries() {
-		return array('entry1'=>'this', 'entry2'=>'that'); 
+		$result = DatabaseConnection::getInstance()->exec('SELECT * FROM people'); 
+		return $result; 
 	}
 
 }
