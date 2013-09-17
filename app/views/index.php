@@ -6,7 +6,7 @@
 </head>
 <body>
 	
-	<pre><?php print_r($entries) ?></pre>
+	<pre><?php print_r($entries); print_r($people) ?></pre>
 
 </body>
 </html>
