@@ -7,9 +7,10 @@ $f3->set('AUTOLOAD', 'app/controllers/');
 
 $f3->route('GET /', 
 	function($f3) {
-		$f3->set('days', Calendar::getInitialDays()); 
-		$f3->set('people', Calendar::getPeople());
-		$f3->set('entries', Calendar::getEntries());  
+		$calendar = new Calendar; 
+		$f3->set('days', $calendar->getInitialDays()); 
+		$f3->set('people', $calendar->getPeople());
+		$f3->set('entries', $calendar->getInitialEntries());  
 		$view = new View; 
 		echo $view->render('index.php'); 
 	}
