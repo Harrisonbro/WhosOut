@@ -18,7 +18,12 @@
 					<div class="day__dow"><?=$d->date->format('D')?></div>
 					<div class="day__date"><?=$d->date->format('j M')?></div>
 				</div><!-- .day__head -->
-				entries: <?php foreach($d->entries as $e) {echo $people[$e->person_id]->firstname.', ';} ?>
+				entries: 
+				<?php 
+					foreach($d->entries as $e) {
+						echo $people[$e->person_id]->firstname . '(' . $e->type . '), '; 
+					} 
+				?>
 			</div><!-- .day -->
 		<?php endforeach; ?>
 	</div><!-- .calendar -->
