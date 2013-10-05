@@ -15,5 +15,14 @@ $f3->route('GET /',
 		echo $view->render('index.php'); 
 	}
 );
+$f3->route('POST /entries/create', 
+	function() {
+		$person_id = $_POST['person_id']; 
+		$date = $_POST['date']; 
+		$type = $_POST['type']; 
+		$entry = new Entry($date, $type, $person_id); 
+		$entry->save(); 
+	}
+); 
 
 $f3->run();
